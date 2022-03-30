@@ -1,4 +1,6 @@
+import { memo } from "react";
 import { MovieCard } from "./MovieCard";
+import { Header } from "./Header";
 
 interface ContentProps {
   selectedGenre: {
@@ -22,10 +24,7 @@ interface ContentProps {
 export function Content({ selectedGenre, movies }: ContentProps) {
   return (
     <div className="container">
-      <header>
-        <span className="category">Categoria:<span> {selectedGenre.title}</span></span>
-      </header>
-
+      <Header selectedGenre={selectedGenre}/>
       <main>
         <div className="movies-list">
           {movies.map(movie => (
